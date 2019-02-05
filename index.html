@@ -76,7 +76,7 @@
         if (!results[2]) return '';
         return decodeURIComponent(results[2].replace(/\+/g, ' '));
     }
-    var default_exposure = window.location.search && (typeof getParameterByName('e')==='number')?getParameterByName('e'):20;
+    var default_exposure = window.location.search && Number(getParameterByName('e'))?getParameterByName('e'):20;
 </script>
 <script type="text/javascript" src="js/main.js"></script>
 </body>
