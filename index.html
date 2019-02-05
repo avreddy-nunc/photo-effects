@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photo Manupulation</title>
+    <!-- caman js -->
+    <script type="text/javascript" src="js/caman.full.min.js"></script>
+    <link href="/ava/staticcontent/admin/templates/image_chooser/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/ava/staticcontent/admin/templates/image_chooser/css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-9">
+                <div class="navbar-header">
+                    <h1>video title</h1>
+                </div>
+            </div>
+            <div class="col-xs-3 task-buttons text-right">
+                <a href="#" class="btn btn-success firstbtn" id="preview" title="Preview all images"><i class="fa fa-arrow-left fa-lg"></i> Back to Choose
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+    <h6><strong>Filters</strong> : <span>Click the below filters to add / remove corresponding filters to image</span></h6>
+    <div class="filters-container" id="filtersContainer">
+
+    </div>
+    <div class="image-container">
+        <div style="width: 50%;padding: 10px;">
+            <div class="row effects-container" id="effectsContainer">
+                <h6><span class="fa fa-sliders"></span> <strong>Adjustments</strong> : Use the below sliders to change the corresponding adjustment to image</h6>
+            </div>
+            <div id="originalImage" style="display: none;">
+                <img src="./media/caman-max.jpg" style="width: 100%;height: auto;" alt="original image">
+                <div  style="display: flex;align-items:center"><h5 style="flex-grow: 1;margin: 0;">Original</h5><button class="preset" style="visibility: hidden;">hidden</button></div>
+            </div>
+        </div>
+        <div style="width: 50%;padding: 10px;">
+            <div style="position: relative;">
+                <img src="./media/caman-max.jpg" style="width: 100%;height: auto;display: block;" id="image-camanImage" >
+                <div class="loading" style="display: none;" id="loader"><h4><span class="loader-animation"></span> Please wait</h4></div>
+            </div>
+            <div style="display: flex;align-items:center">
+                <label class="switch">
+                    <input type="checkbox" id="toggleOriginal">
+                    <span class="switch-slider round"></span>
+                </label>
+                <h6 id="orignalText">Show Original</h6>
+                <h5 style="flex-grow: 1;margin: 0;">Edited</h5>
+                <!--<h6 style="text-align: center;margin: 0;"><strong id="selectedFiltersCount">0</strong> Filters applied</h6>-->
+                <button class="preset button-danger" id="reset" disabled>Reset</button>
+                <button class="preset" id="save" disabled>Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+<form id="uploadimageform" name="uploadimageform">
+    <input type='hidden' name='UPLOAD_URL' value='<!--UPLOAD_URL-->'/>
+    <input type="HIDDEN" name="csrf_token" value="<!--CSRF_TOKEN-->">
+</form>
+<div class="body-loading loading" style="display: none;" id="saveLoader"><h4><span class="fa fa-floppy-o"></span> Saving, Please wait</h4></div>
+<img src="./media/caman-max.jpg" crossOrigin="Anonymous" id="originalImageElement" style="display: none;"/>
+<!----- mian script ------>
+<script type="text/javascript" >
+    var default_exposure = 20;
+</script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
