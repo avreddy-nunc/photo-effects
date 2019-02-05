@@ -1022,7 +1022,7 @@
     };
 
     Calculate.missingValues = function(values, endX) {
-      var i, j, leftCoord, ret, rightCoord, _i, _j;
+      var i, j, leftCoord=[], ret, rightCoord=[], _i, _j;
       if (Object.keys(values).length < endX + 1) {
         ret = {};
         for (i = _i = 0; 0 <= endX ? _i <= endX : _i >= endX; i = 0 <= endX ? ++_i : --_i) {
